@@ -14,6 +14,23 @@
             background-repeat: no-repeat;
             background-attachment: fixed; 
         }
+        .search-bar {
+            background-color: #282F32; /* Couleur de fond de la barre de recherche */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+            z-index: 1030; /* Assurer que la barre reste au-dessus des autres éléments */
+            padding: 10px 15px; /* Réduction des espaces internes */
+            height: 50px; /* Hauteur réduite de la barre */
+        }
+        .search-bar img {
+            height: px; /* Taille réduite du logo */
+        }
+        .search-bar .form-control {
+            height: 30px; /* Réduction de la hauteur du champ de recherche */
+        }
+        .search-bar .btn {
+            padding: 5px 10px; /* Diminuer le padding du bouton */
+            font-size: 14px; /* Réduire la taille du texte du bouton */
+        }
         .zoom-in {
   transition: transform 0.5s ease-in-out;
         }
@@ -44,24 +61,44 @@
 .animated-text:nth-child(2) {
   animation-delay: 0.5s; 
 }
-nav{
-    background-color: #55666E;
-}
+.navbar-custom {
+        background-color: #282F32; /* Exemple de couleur vert */
+    }
+
+    .navbar-custom .btn-outline-success {
+        color: white;
+        border-color: white;
+    }
+
+    .navbar-custom .btn-outline-success:hover {
+        background-color: white;
+        color: #4CAF50;
+    }
+
+    .navbar-custom .form-control {
+        background-color: #f1f1f1;
+    }
 
     </style>
-    
-    <nav class="navbar navbar-expand-lg ">
-    <div class="container">
-    <a class="navbar-brand" href="#">
-        <img src="public/assets/images/" alt="">
-    <input  class="form-control me-2" type="search"  id="search-input" placeholder="Nom du region" aria-label="Search">
-    <button class="btn btn-outline-success" id="search-btn" type="submit">Search</button>
-    <a href="<?= site_url('location/regions'); ?>" class="btn btn-outline-success">Voir les listes complets</a>
-    </a>
-    </nav>
-     
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top py-3">
+    <div class="container-fluid d-flex align-items-center">
+        <!-- Logo avec ajustement de la taille -->
+        <a class="navbar-brand">
+            <img src="<?= base_url('public/assets/images/unnamed.jpg'); ?>" alt="Logo" style="height: 40px;">
+        </a>
+
+        <!-- Formulaire de recherche aligné à droite -->
+        <form class="d-flex ms-auto" role="search">
+            <input class="form-control me-2" type="search" id="search-input" placeholder="Nom de la région" aria-label="Search" style="width: 250px;">
+            <button class="btn btn-outline-success me-2" id="search-btn" type="submit">Search</button>
+            <a href="<?= site_url('location/regions'); ?>" class="btn btn-outline-success me-2">Voir les listes complètes</a>
+        </form>
+    </div>
+</nav>
+      
     <div class="container mt-5">
     <div class="container-fluid p-4  text-white text-center height: 100px;">
+        <br>
   <h1 class="animated-text">LISTE DES REGIONS</h1>
   <p class="animated-text">Cliquer sur voir les districts si vous voulez</p> 
 </div>
