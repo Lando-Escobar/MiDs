@@ -160,6 +160,31 @@
                 margin-bottom: 20px;
             }
         }
+@media (max-width:850px){
+    .home{
+        background-position: 50%;
+    }
+}
+@media (max-width:450px){
+    .home .content h5{
+        font-size: 25px;
+    }
+    .home .content p{
+        font-size: 13px;
+    }
+}
+@keyframes changetext {
+    20% { color: white; }  /* Changer la couleur à 20% */
+    40% { color: red; }    /* Changer la couleur à 40% */
+    50% { color: green; }  /* Changer la couleur à 50% */
+}
+
+.changecontent::after {
+    content: 'Madagascar';  /* Texte statique "Madagascar" */
+    text-shadow: 0px 1px 1px black;
+    animation: changetext 5s infinite linear;  /* Applique l'animation des couleurs */
+}
+
     </style>
 </head>
 
@@ -193,7 +218,7 @@
     <!-- Home Section -->
     <div class="home">
         <div class="content">
-            <h5>Bienvenue à Madagascar</h5>
+            <h5>Bienvenue à <span class="changecontent"></span></h5>
             <h1>Découvrez la beauté de notre île.</h1>
         </div>
     </div>
@@ -225,7 +250,7 @@
                 </div>
                 <div class="col-lg-4 col-md-12 py-3">
                     <div class="card">
-                        <img src="../../public/assets/images/Marc_Winer_4203b8d684.jpg" class="img-fluid" alt="">
+                        <img src="../../public/assets/images/Les-fetes-et-celebrations-traditionnelles-a-Madagascar-Un-voyage-au-coeur-de-la-culture-unique-1280x800.webp" class="img-fluid" alt="" style="height: 240px;">
                         <div class="card-body">
                             <h3 class="card-title">Gastronomie Malgache</h3>
                             <p class="card-text">La gastronomie malgache est variée, incluant des plats à base de riz, de fruits de mer et d'épices. Ne manquez pas de goûter au ravitoto et au romazava.</p>
