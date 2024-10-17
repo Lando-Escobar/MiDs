@@ -50,8 +50,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 // config/routes.php
-
-$route['default_controller'] = 'location';
+// Route par défaut pour la page d'accueil
+$route['default_controller'] = 'Home';
 
 // Route pour afficher les régions
 $route['regions'] = 'location/index';
@@ -62,9 +62,11 @@ $route['location/districts/(:any)'] = 'location/districts/$1';
 // Route pour afficher les communes d'un district
 $route['location/communes/(:any)'] = 'location/communes/$1';
 
-// Route par défaut en cas d'erreur 404
-$route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
 // Route pour afficher les détails d'un district donné
 $route['location/district/(:any)'] = 'location/district_details/$1';
-$route['location/regions'] = 'location/regions';
+
+// Route par défaut en cas d'erreur 404
+$route['404_override'] = '';
+
+// Traduction des tirets dans l'URI en underscores dans les méthodes de contrôleurs
+$route['translate_uri_dashes'] = FALSE;
